@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<<html>
+<head>
+    <title>New York Times Search</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Header-->
+    <div class="jumbotron" >
+        <h1><strong>Anytime is Train Time</strong></h1><br>
+        <p>Choo choo. Chee chee.</p>
+    </div>
+
+    <!-- Current Train Schedule list-->
+    <div class="row">
+       <div class="col-xs-12">
+           <div class="panel panel-info">
+               <div class="panel-heading">
+                   <h3 class="panel-title"><strong>Current Train Schedule</strong></h3>
+               </div>
+               <div class="panel-body" id="trainSchedule">
+               </div>
+           </div>
+       </div>
+
+    </div>
+
+
+    <!-- Add Train form-->
+    <div class="row" id="addTrain">
+        <div class="col-xs-12">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><strong>Add Train</strong></h3>
+                </div>
+                <div class="panel-body">
+                    <form role="form">
+                        <div class="form-group">
+                            <label for="trainName">Train Name</label>
+                            <input type="text" class="form-control" id="trainName">
+                        </div>
+                        <div class="form-group">
+                            <label for="destination">Destination</label>
+                            <input type="text" class="form-control" id="destination">
+                        </div>
+                        <div class="form-group">
+                            <label for="firstTime">First Train Time (HH:mm - military time)</label>
+                            <input type="text" class="form-control" id="firstTime">
+                        </div>
+                        <div class="form-group">
+                            <label for="frequency">Frequency (min)</label>
+                            <input type="text" class="form-control" id="frequency">
+                        </div>
+                        <button type="submit" class="btn btn-success" id="submit">Submit</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="logic.js"></script>
+</body>
+</html>
