@@ -1,12 +1,24 @@
 <!DOCTYPE html>
-<<html>
+
+<html lang="en-us">
+
 <head>
-    <title>New York Times Search</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.6/flatly/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+
+    <title>Train Scheduler</title>
+    <meta charset="UTF-8">
+
+    <!-- Bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!--jQuery-->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+        <!--Firebase-->
+    <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+
+    <!--Moment-->
+    <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
 </head>
 
 <body>
@@ -15,8 +27,8 @@
 
     <!-- Header-->
     <div class="jumbotron" >
-        <h1><strong>Anytime is Train Time</strong></h1><br>
-        <p>Choo choo. Chee chee.</p>
+        <h1 class="text-center">Anytime is Train Time</h1><br>
+        <p class="text-center">Choo choo. Chee chee.</p>
     </div>
 
     <!-- Current Train Schedule list-->
@@ -24,13 +36,25 @@
        <div class="col-xs-12">
            <div class="panel panel-info">
                <div class="panel-heading">
-                   <h3 class="panel-title"><strong>Current Train Schedule</strong></h3>
+                   <h3 class="panel-title">Current Train Schedule</h3>
                </div>
-               <div class="panel-body" id="trainSchedule">
+               <div class="panel-body">
+                   <table class="table table-hover" id="train-schedule">
+                       <thead>
+                           <tr>
+                               <th>Train Name</th>
+                               <th>Destination</th>
+                               <th>Frequency (min)</th>
+                               <th>Next Arrival</th>
+                               <th>Minutes Away</th>
+                           </tr>
+                       </thead>
+                       <tbody>
+                       </tbody>
+                   </table>
                </div>
            </div>
        </div>
-
     </div>
 
 
@@ -39,7 +63,7 @@
         <div class="col-xs-12">
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    <h3 class="panel-title"><strong>Add Train</strong></h3>
+                    <h3 class="panel-title">Add Train</h3>
                 </div>
                 <div class="panel-body">
                     <form role="form">
@@ -49,17 +73,17 @@
                         </div>
                         <div class="form-group">
                             <label for="destination">Destination</label>
-                            <input type="text" class="form-control" id="destination">
+                            <input type="text" class="form-control" id="trainDest">
                         </div>
                         <div class="form-group">
-                            <label for="firstTime">First Train Time (HH:mm - military time)</label>
-                            <input type="text" class="form-control" id="firstTime">
+                            <label for="firstTrainTime">First Train Time (HH:mm - military time)</label>
+                            <input type="text" class="form-control" id="trainFirst">
                         </div>
                         <div class="form-group">
                             <label for="frequency">Frequency (min)</label>
-                            <input type="text" class="form-control" id="frequency">
+                            <input type="text" class="form-control" id="trainFreq">
                         </div>
-                        <button type="submit" class="btn btn-success" id="submit">Submit</button>
+                        <button type="submit" class="btn btn-success" id="add-train">Submit</button>
                     </form>
                 </div>
 
@@ -68,6 +92,6 @@
     </div>
 </div>
 
-<script type="text/javascript" src="logic.js"></script>
+    <script type="text/javascript" src="logic.js"></script>
 </body>
 </html>
